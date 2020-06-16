@@ -1,0 +1,19 @@
+<div class="projects-list" *ngIf="repositories else loading">
+    <div *ngFor="let repo of repositories">
+        <mat-card>
+            <mat-card-title>{{repo.name}}</mat-card-title>
+            <mat-chip-list class="languages" *ngFor="let language of repo.languages">
+                <mat-chip>{{language}}</mat-chip>
+            </mat-chip-list>
+            <mat-card-content>{{repo.description}}</mat-card-content>
+            <mat-card-actions>
+                <a mat-raised-button [disabled]=repo.private>Live demo</a>
+                <a mat-raised-button [disabled]=repo.private [href]=repo.html_url target="_blank">Source code</a>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>
+
+<ng-template #loading>
+    <div>loading...</div>
+</ng-template>

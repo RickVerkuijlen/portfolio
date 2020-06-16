@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  GitHubUrl: "https://api.github.com",
+  GitHubToken: "d0839b52b75e0975ad00f939bd2343544416cb89"
 };
 
 /*

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { GithubService } from './services/github/github.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +9,10 @@ import { GithubService } from './services/github/github.service';
 export class AppComponent {
   title = 'portfolio';
 
-  constructor() {}
+  constructor(public translate: TranslateService) {
+    translate.addLangs(['en', 'nl']);
+    translate.setDefaultLang('nl');
+    const browserLang = translate.getBrowserLang();
+    translate.use(browserLang.match(/en|nl/) ? browserLang : 'en');
+  }
 }

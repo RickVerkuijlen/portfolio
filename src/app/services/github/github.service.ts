@@ -15,27 +15,28 @@ export class GithubService {
     })
   }
 
+  private languages = [];
+
   constructor(private http: HttpClient) { }
 
-  async getAllRepos(): Promise<Repo[]> {
+  async getAllRepos() {
     let repoes = [];
 
-    await this.http.get<any[]>(this.baseUrl + "/user/repos", this.options).toPromise()
-    .then(result => {
-      console.log(result);
-      result.forEach(async element => {
-        var repo = new Repo;
-        repo.id = element.id;
-        repo.name = element.name;
-        repo.private = element.private;
-        repo.html_url = element.html_url;
-        repo.languages = await this.getLanguaguesFromRepo(element.languages_url);
-        repo.description = element.description;
-        repoes.push(repo);
-      });
-    });
-    console.log(repoes)
-    return repoes;
+    return new Promise(resolve => {
+      this.http.get(this.baseUrl + "/user/repos", this.options).subscribe((response: any) => {
+        response.forEach(async element => {
+              var repo = new Repo;
+              repo.id = element.id;
+              repo.name = element.name;
+              repo.private = element.private;
+              repo.html_url = element.html_url;
+              repo.languages = await this.getLanguaguesFromRepo(element.languages_url);
+              repo.description = element.description;
+              repoes.push(repo);
+              this.setLanguages(repo.languages);
+      })
+      resolve(repoes);
+    })})
   }
 
   async getLanguaguesFromRepo(repoUrl: string): Promise<string[]> {
@@ -43,12 +44,23 @@ export class GithubService {
 
     await this.http.get<any[]>(repoUrl, this.options).toPromise()
     .then(result => {
-      console.log(result);
       for(let key in result) {
         languages.push(key.toString());
       }
     });
 
     return languages;
+  }
+
+  setLanguages(newLanguages: string[]) {
+    newLanguages.forEach(language => {
+      if(!this.languages.includes(language)) {
+        this.languages.push(language);
+      }
+    })
+  }
+
+  getLanguages() {
+    return this.languages;
   }
 }

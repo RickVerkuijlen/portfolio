@@ -1,3 +1,10 @@
-mat-card {
-    margin: 15px;
+div.projects-list {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    div {
+        flex: 1 0 auto;
+        flex-basis: 30%;
+        margin: 15px;
+    }
 }

@@ -13,6 +13,7 @@ import { AboutComponent } from './components/about/about.component';
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { MenuComponent } from './components/menu/menu.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -23,6 +24,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppComponent,
     ProjectsComponent,
     AboutComponent,
+    MenuComponent,
   ],
   imports: [
     BrowserModule,

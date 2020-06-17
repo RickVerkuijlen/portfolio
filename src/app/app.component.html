@@ -1,7 +1,14 @@
 <div>
-  <select #langselect (change)="translate.use(langselect.value)">
-    <option *ngFor="let lang of translate.getLangs()" [value]="lang">{{lang}}</option>
-  </select>
+  <app-menu></app-menu>
   <app-about></app-about>
   <app-projects></app-projects>
+</div>
+<div class="languages">
+  <div *ngFor="let lang of translate.getLangs()" class="language">
+    <input type="radio" name="language" (change)="translate.use(lang)" [checked]="translate.currentLang == lang" [id]="lang" [value]="lang">
+    <label [for]="lang" class="tooltip">
+        <img src="assets/img/flags/{{lang}}.png" [alt]="lang"/>
+        <span class="tooltiptext">{{lang}}</span>
+    </label>
+  </div>
 </div>

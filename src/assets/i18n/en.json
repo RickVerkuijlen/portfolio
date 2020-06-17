@@ -3,5 +3,8 @@
         "showAll": "Show all",
         "sourceCode": "Source code",
         "liveDemo": "Live demo"
+    },
+    "about": {
+        "main": "My name is Rick Verkuijlen"
     }
 }

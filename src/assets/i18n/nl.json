@@ -3,5 +3,8 @@
         "showAll": "Alle projecten",
         "sourceCode": "Broncode",
         "liveDemo": "Live demo"
+    },
+    "about": {
+        "main": "Mijn naam is Rick Verkuijlen"
     }
 }

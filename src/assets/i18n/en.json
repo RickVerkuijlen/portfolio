@@ -1,4 +1,11 @@
 {
+    "menu": {
+        "home": "Home",
+        "about": "About",
+        "projects": "Projects",
+        "contact": "Contact",
+        "collapse": "Collapse menu"
+    },
     "loading": "Loading...",
     "projects": {
         "showAll": "Show all",
@@ -6,6 +13,6 @@
         "liveDemo": "Live demo"
     },
     "about": {
-        "main": "My name is Rick Verkuijlen <br /> asdf"
+        "main": "I'm Rick Verkuijlen <br /> asdf"
     }
 }

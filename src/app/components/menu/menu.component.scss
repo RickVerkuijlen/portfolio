@@ -8,7 +8,6 @@ nav {
     height: 100%;
     position: fixed;
     font-size: 20px;
-    transition: width .2s ease;
     h1 { //Just to test
         font-weight: bold;
         font-size: 3em;
@@ -25,6 +24,7 @@ nav {
         padding: 0;
         li {
             padding: 10px;
+            cursor: pointer;
         }
         .socials {
             position: absolute;
@@ -35,5 +35,17 @@ nav {
 
 span {
     opacity: 1;
-    transition: opacity .2s ease;
+    &:not(:first-child) {
+        padding-left: 10px;
+    }
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    fa-icon {
+        svg {
+            width: 40px;
+        }
+    }
 }

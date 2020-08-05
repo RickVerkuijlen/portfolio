@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { faHome, faTasks, faBriefcase, faEnvelope, faUser} from '@fortawesome/free-solid-svg-icons'
+import { faHome, faTasks, faBriefcase, faEnvelope, faUser, faArrowCircleLeft, faArrowCircleRight} from '@fortawesome/free-solid-svg-icons'
 import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
@@ -16,6 +16,8 @@ export class MenuComponent implements OnInit {
   faUser = faUser;
   faGithub = faGithub;
   faLinkedin = faLinkedinIn;
+  faCircleLeft = faArrowCircleLeft;
+  faCircleRight = faArrowCircleRight;
 
   navBar;
   menu;
@@ -23,39 +25,47 @@ export class MenuComponent implements OnInit {
   mainContent;
 
   isExtended = true;
+  arrow;
   
   constructor() {
     
   }
 
   ngOnInit(): void {
-    this.navBar = document.getElementById("nav");
+    this.navBar = document.getElementById("desktop-nav");
     this.menu = document.getElementById("menu-item");
     this.menuItems = this.navBar.getElementsByTagName("span");
     this.mainContent = document.getElementById("main-content");
+    this.arrow = document.getElementById("arrow");
+    this.setNav();
   }
 
   toggleNav(): void {
     this.isExtended = !this.isExtended;
 
-    console.log(this.menuItems)
+    localStorage.setItem("isExtended", JSON.stringify(this.isExtended));
+    this.setNav();
+  }
 
+  setNav(): void {
+    this.isExtended = JSON.parse(localStorage.getItem("isExtended"))
     if(this.isExtended) {
       this.navBar.style.width = "200px";
       this.mainContent.style.marginLeft = "200px";
+      
       for (let item of this.menuItems) {
-        item.style.opacity = "1";
-        item.style.display = "inline-block";
+        item.style.position = "relative";
+        item.style.left = "0";
+        // item.style.display = "inline";
       }
     } else {
       this.navBar.style.width = "60px";
       this.mainContent.style.marginLeft = "60px";
       for (let item of this.menuItems) {
-        item.style.opacity = "0";
-        item.style.display = "none";
+        item.style.position = "absolute";
+        item.style.left = "-999px";
+        // item.style.display = "none";
       }
     }
   }
-
-
 }

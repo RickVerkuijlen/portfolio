@@ -1,4 +1,11 @@
 {
+    "menu": {
+        "home": "Home",
+        "about": "Over mij",
+        "projects": "Projecten",
+        "contact": "Contact",
+        "collapse": "Menu invouwen"
+    },
     "loading": "Laden...",
     "projects": {
         "showAll": "Alle projecten",
@@ -6,6 +13,6 @@
         "liveDemo": "Live demo"
     },
     "about": {
-        "main": "Mijn naam is Rick Verkuijlen <br /> asdf"
+        "main": "Ik ben Rick Verkuijlen <br /> asdf"
     }
 }

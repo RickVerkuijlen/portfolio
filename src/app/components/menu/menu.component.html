@@ -1,14 +1,18 @@
-<nav id="nav">
-    <h1 (click)="toggleNav()">R<span>ick</span></h1>
+<nav id="desktop-nav">
+    <h1>R<span>ick</span></h1>
     <ul id="menu-item">
-        <li><fa-icon [icon]="faHome"></fa-icon> <span>Home</span></li>
-        <li><fa-icon [icon]="faUser"></fa-icon> <span>About</span></li>
-        <li><fa-icon [icon]="faTasks"></fa-icon> <span>Timeline</span></li>
-        <li><fa-icon [icon]="faBriefcase"></fa-icon> <span>Projects</span></li>
-        <li><fa-icon [icon]="faEnvelope"></fa-icon> <span>Contact</span></li>
+        <li><fa-icon [icon]="faHome"></fa-icon> <span>{{ 'menu.home' | translate}}</span></li>
+        <li><fa-icon [icon]="faUser"></fa-icon> <span>{{ 'menu.about' | translate}}</span></li>
+        <li><fa-icon [icon]="faBriefcase"></fa-icon> <span>{{ 'menu.projects' | translate}}</span></li>
+        <li><fa-icon [icon]="faEnvelope"></fa-icon> <span>{{ 'menu.contact' | translate}}</span></li>
+        <li (click)="toggleNav()" style="color: #2f3f44;">
+            <fa-icon *ngIf="isExtended" [icon]="faCircleLeft"></fa-icon> 
+            <fa-icon *ngIf="!isExtended" [icon]="faCircleRight"></fa-icon>
+            <span>{{ 'menu.collapse' | translate}}</span>
+        </li>
         <div class="socials">
-            <li><fa-icon [icon]="faGithub"></fa-icon> <span>Github</span></li>
-            <li><fa-icon [icon]="faLinkedin"></fa-icon> <span>LinkedIn</span></li>
+            <li><a href="https://github.com/RickVerkuijlen" target="_blank"><fa-icon [icon]="faGithub"></fa-icon> <span>Github</span></a></li>
+            <li><a href="https://www.linkedin.com/in/rick-verkuijlen-47241510b/" target="_blank"><fa-icon [icon]="faLinkedin"></fa-icon> <span>LinkedIn</span></a></li>
         </div>
         
     </ul>

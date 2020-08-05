@@ -21,6 +21,7 @@ $portfolio-warn: mat-palette($mat-red);
 // Create the theme object (a Sass map containing all of the palettes).
 $portfolio-theme: mat-light-theme($portfolio-primary, $portfolio-accent, $portfolio-warn);
 
+
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
@@ -29,7 +30,7 @@ $portfolio-theme: mat-light-theme($portfolio-primary, $portfolio-accent, $portfo
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}
 
 .content {
     margin-left: auto;

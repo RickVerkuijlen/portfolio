@@ -1,10 +1,11 @@
 {
+    "loading": "Laden...",
     "projects": {
         "showAll": "Alle projecten",
         "sourceCode": "Broncode",
         "liveDemo": "Live demo"
     },
     "about": {
-        "main": "Mijn naam is Rick Verkuijlen"
+        "main": "Mijn naam is Rick Verkuijlen <br /> asdf"
     }
 }

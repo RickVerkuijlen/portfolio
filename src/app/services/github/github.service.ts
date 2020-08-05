@@ -25,6 +25,7 @@ export class GithubService {
     return new Promise(resolve => {
       this.http.get(this.baseUrl + "/user/repos", this.options).subscribe((response: any) => {
         response.forEach(async element => {
+          console.log(element);
               var repo = new Repo;
               repo.id = element.id;
               repo.name = element.name;

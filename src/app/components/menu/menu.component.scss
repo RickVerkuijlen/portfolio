@@ -1,3 +1,39 @@
+@import "../../../variables.scss";
+
+
 nav {
-    
+    background-color: $background-color;
+    color: white;
+    width: 200px;
+    height: 100%;
+    position: fixed;
+    font-size: 20px;
+    transition: width .2s ease;
+    h1 { //Just to test
+        font-weight: bold;
+        font-size: 3em;
+        margin: 10px;
+        color: $primary-color;
+        text-shadow: -3px 0px $secondary-color;
+        letter-spacing: 10px;
+        display: block;
+        text-align: center;
+        cursor: pointer;
+    } 
+    ul {
+        list-style-type: none;
+        padding: 0;
+        li {
+            padding: 10px;
+        }
+        .socials {
+            position: absolute;
+            bottom: 0;
+        }
+    }
+}
+
+span {
+    opacity: 1;
+    transition: opacity .2s ease;
 }

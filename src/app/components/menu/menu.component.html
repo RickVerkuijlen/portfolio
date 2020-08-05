@@ -1,3 +1,15 @@
-<nav>
-    <h1>Rick Verkuijlen</h1>
+<nav id="nav">
+    <h1 (click)="toggleNav()">R<span>ick</span></h1>
+    <ul id="menu-item">
+        <li><fa-icon [icon]="faHome"></fa-icon> <span>Home</span></li>
+        <li><fa-icon [icon]="faUser"></fa-icon> <span>About</span></li>
+        <li><fa-icon [icon]="faTasks"></fa-icon> <span>Timeline</span></li>
+        <li><fa-icon [icon]="faBriefcase"></fa-icon> <span>Projects</span></li>
+        <li><fa-icon [icon]="faEnvelope"></fa-icon> <span>Contact</span></li>
+        <div class="socials">
+            <li><fa-icon [icon]="faGithub"></fa-icon> <span>Github</span></li>
+            <li><fa-icon [icon]="faLinkedin"></fa-icon> <span>LinkedIn</span></li>
+        </div>
+        
+    </ul>
 </nav>

@@ -56,7 +56,6 @@ export class MenuComponent implements OnInit {
       for (let item of this.menuItems) {
         item.style.position = "relative";
         item.style.left = "0";
-        // item.style.display = "inline";
       }
     } else {
       this.navBar.style.width = "60px";
@@ -64,7 +63,6 @@ export class MenuComponent implements OnInit {
       for (let item of this.menuItems) {
         item.style.position = "absolute";
         item.style.left = "-999px";
-        // item.style.display = "none";
       }
     }
   }

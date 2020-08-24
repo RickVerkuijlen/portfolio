@@ -25,19 +25,35 @@ nav {
         li {
             padding: 10px;
             cursor: pointer;
+            a {
+                color: #979797;
+                &.active {
+                    color: white;
+                }
+                fa-icon {
+                    text-align: center;
+                    svg {
+                        min-width: 100px !important;
+                    }
+                    
+                }
+            }
         }
         .socials {
             position: absolute;
             bottom: 0;
+            li {
+                a {
+                    color: white;
+                }
+            }
         }
     }
 }
 
 span {
     opacity: 1;
-    &:not(:first-child) {
-        padding-left: 10px;
-    }
+    padding-left: 10px;
 }
 
 a {

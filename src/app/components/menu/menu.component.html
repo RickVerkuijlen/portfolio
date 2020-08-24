@@ -1,10 +1,10 @@
 <nav id="desktop-nav">
     <h1>R<span>ick</span></h1>
     <ul id="menu-item">
-        <li><fa-icon [icon]="faHome"></fa-icon> <span>{{ 'menu.home' | translate}}</span></li>
-        <li><fa-icon [icon]="faUser"></fa-icon> <span>{{ 'menu.about' | translate}}</span></li>
-        <li><fa-icon [icon]="faBriefcase"></fa-icon> <span>{{ 'menu.projects' | translate}}</span></li>
-        <li><fa-icon [icon]="faEnvelope"></fa-icon> <span>{{ 'menu.contact' | translate}}</span></li>
+        <li><a [routerLink]="['/home']" routerLinkActive="active"><fa-icon [icon]="faHome" [fixedWidth]="true"></fa-icon> <span>{{ 'menu.home' | translate}}</span></a></li>
+        <li><a [routerLink]="['/about']" routerLinkActive="active"><fa-icon [icon]="faUser" [fixedWidth]="true"></fa-icon> <span>{{ 'menu.about' | translate}}</span></a></li>
+        <li><a [routerLink]="['/projects']" routerLinkActive="active"><fa-icon [icon]="faBriefcase" [fixedWidth]="true"></fa-icon> <span>{{ 'menu.projects' | translate}}</span></a></li>
+        <li><a [routerLink]="['/contact']" routerLinkActive="active"><fa-icon [icon]="faEnvelope" [fixedWidth]="true"></fa-icon> <span>{{ 'menu.contact' | translate}}</span></a></li>
         <li (click)="toggleNav()" style="color: #2f3f44;">
             <fa-icon *ngIf="isExtended" [icon]="faCircleLeft"></fa-icon> 
             <fa-icon *ngIf="!isExtended" [icon]="faCircleRight"></fa-icon>

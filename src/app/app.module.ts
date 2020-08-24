@@ -17,6 +17,7 @@ import { AboutComponent } from './components/about/about.component';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { HomeComponent } from './home/home.component';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -30,6 +31,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     AboutComponent,
     MenuComponent,
     ContactComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

@@ -25,16 +25,18 @@ export class GithubService {
     return new Promise(resolve => {
       this.http.get(this.baseUrl + "/user/repos", this.options).subscribe((response: any) => {
         response.forEach(async element => {
-          console.log(element);
-              var repo = new Repo;
-              repo.id = element.id;
-              repo.name = element.name;
-              repo.private = element.private;
-              repo.html_url = element.html_url;
-              repo.languages = await this.getLanguaguesFromRepo(element.languages_url);
-              repo.description = element.description;
-              repoes.push(repo);
-              this.setLanguages(repo.languages);
+          if(!element.private) {
+            var repo = new Repo;
+            repo.id = element.id;
+            repo.name = element.name;
+            repo.private = element.private;
+            repo.html_url = element.html_url;
+            repo.languages = await this.getLanguaguesFromRepo(element.languages_url);
+            repo.description = element.description;
+            repoes.push(repo);
+            this.setLanguages(repo.languages);
+          }
+          
       })
       resolve(repoes);
     })})

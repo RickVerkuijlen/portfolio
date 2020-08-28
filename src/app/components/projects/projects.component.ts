@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GithubService } from 'src/app/services/github/github.service';
 import { Repo } from 'src/app/models/repo';
 import { TranslateService } from '@ngx-translate/core';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-projects',
@@ -13,6 +14,8 @@ export class ProjectsComponent implements OnInit {
   repositories;
   shownRepositories;
   languages = [];
+
+  faGithub = faGithub;
 
   constructor(private github: GithubService, public translate: TranslateService) { 
   }

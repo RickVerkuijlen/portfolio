@@ -5,10 +5,65 @@ div.content {
         display: inline-flex;
         flex-direction: row;
         flex-wrap: wrap;
+        width: 100%;
         div {
-            flex: 1 0 auto;
-            flex-basis: 30%;
-            margin: 15px;
+            width: 25%;
+            height: 285px;
+            div.project {
+                color: black;
+                width: 100%;
+                z-index: 1;
+                perspective: 1000px;
+                &:hover {
+                    .flip-card-inner {
+                        transform: rotateY(180deg);
+                    }
+                }
+                
+                .flip-card-inner {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    text-align: center;
+                    transition: transform 0.5s;
+                    transform-style: preserve-3d;
+                }
+                .flip-card-front {
+                    background-color: black;
+                    h2 {
+                        color: white;
+                    }
+                    img {
+                        position: absolute;
+                        height: 100%;
+                        width: inherit;
+                        left: 0;
+                        opacity: .5;
+                    }
+                }
+                .flip-card-front, .flip-card-back {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    -webkit-backface-visibility: hidden; /* Safari */
+                    backface-visibility: hidden;
+                }
+                .flip-card-back {
+                    background-color: $primary-color;
+                    color: white;
+                    transform: rotateY(180deg);
+                    a {
+                        color: white;
+                        position: absolute;
+                        bottom: 15px;
+                        left: 127.5px;
+                        font-size: 30px;
+                        &:hover {
+                            color: $secondary-color;
+                        }
+                    }
+                  }
+            }
         }
     }
 }
@@ -21,4 +76,25 @@ div.content {
     width: 100%;
     margin-top: 15px;
     color: white;
+}
+
+
+@media screen and (max-width: 992px) {
+    div.content {
+        div.projects-list {
+            div { 
+                width: 50%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px){
+    div.content {
+        div.projects-list {
+            div { 
+                width: 100%;
+            }
+        }
+    }
 }

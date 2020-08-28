@@ -7,10 +7,14 @@
         "collapse": "Collapse menu"
     },
     "loading": "Loading...",
+    "home": {
+        "underConstruction": "This website is still under construction."
+    },
     "projects": {
         "showAll": "Show all",
         "sourceCode": "Source code",
-        "liveDemo": "Live demo"
+        "liveDemo": "Live demo",
+        "github": "The display of the projects is made in combination with the Github API."
     },
     "about": {
         "main": "I'm Rick Verkuijlen <br /> asdf"

@@ -7,10 +7,14 @@
         "collapse": "Menu invouwen"
     },
     "loading": "Laden...",
+    "home": {
+        "underConstruction": "Er wordt nog vollop gewerkt aan deze website."
+    },
     "projects": {
         "showAll": "Alle projecten",
         "sourceCode": "Broncode",
-        "liveDemo": "Live demo"
+        "liveDemo": "Live demo",
+        "github": "De weergave van de projecten is gemaakt in combinatie met de Github API."
     },
     "about": {
         "main": "Ik ben Rick Verkuijlen <br /> asdf"

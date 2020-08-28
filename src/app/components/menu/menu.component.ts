@@ -57,12 +57,20 @@ export class MenuComponent implements OnInit {
         item.style.position = "relative";
         item.style.left = "0";
       }
+
+      for (let item of this.navBar.getElementsByTagName("li")) {
+        item.style.textAlign = "left";
+      }
     } else {
       this.navBar.style.width = "60px";
       this.mainContent.style.marginLeft = "60px";
       for (let item of this.menuItems) {
         item.style.position = "absolute";
         item.style.left = "-999px";
+      }
+
+      for (let item of this.navBar.getElementsByTagName("li")) {
+        item.style.textAlign = "center";
       }
     }
   }

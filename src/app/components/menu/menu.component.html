@@ -1,11 +1,12 @@
 <nav id="desktop-nav">
     <h1>R<span>ick</span></h1>
+    <fa-icon id="hamburger" [icon]="faBars" (click)="openMobileNav()"></fa-icon>
     <ul id="menu-item">
         <li><a [routerLink]="['/home']" routerLinkActive="active"><fa-icon [icon]="faHome" [fixedWidth]="true"></fa-icon> <span>{{ 'menu.home' | translate}}</span></a></li>
         <li><a [routerLink]="['/about']" routerLinkActive="active"><fa-icon [icon]="faUser" [fixedWidth]="true"></fa-icon> <span>{{ 'menu.about' | translate}}</span></a></li>
         <li><a [routerLink]="['/projects']" routerLinkActive="active"><fa-icon [icon]="faBriefcase" [fixedWidth]="true"></fa-icon> <span>{{ 'menu.projects' | translate}}</span></a></li>
         <li><a [routerLink]="['/contact']" routerLinkActive="active"><fa-icon [icon]="faEnvelope" [fixedWidth]="true"></fa-icon> <span>{{ 'menu.contact' | translate}}</span></a></li>
-        <li (click)="toggleNav()" style="color: #2f3f44;">
+        <li id="collapse" (click)="toggleNav()" style="color: #2f3f44;">
             <fa-icon *ngIf="isExtended" [icon]="faCircleLeft"></fa-icon> 
             <fa-icon *ngIf="!isExtended" [icon]="faCircleRight"></fa-icon>
             <span>{{ 'menu.collapse' | translate}}</span>
@@ -14,6 +15,5 @@
             <li><a href="https://github.com/RickVerkuijlen" target="_blank"><fa-icon [icon]="faGithub"></fa-icon> <span>Github</span></a></li>
             <li><a href="https://www.linkedin.com/in/rick-verkuijlen-47241510b/" target="_blank"><fa-icon [icon]="faLinkedin"></fa-icon> <span>LinkedIn</span></a></li>
         </div>
-        
     </ul>
 </nav>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { faHome, faTasks, faBriefcase, faEnvelope, faUser, faArrowCircleLeft, faArrowCircleRight} from '@fortawesome/free-solid-svg-icons'
+import { faHome, faTasks, faBriefcase, faEnvelope, faUser, faArrowCircleLeft, faArrowCircleRight, faBars} from '@fortawesome/free-solid-svg-icons'
 import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
@@ -18,6 +18,7 @@ export class MenuComponent implements OnInit {
   faLinkedin = faLinkedinIn;
   faCircleLeft = faArrowCircleLeft;
   faCircleRight = faArrowCircleRight;
+  faBars = faBars;
 
   navBar;
   menu;
@@ -73,5 +74,16 @@ export class MenuComponent implements OnInit {
         item.style.textAlign = "center";
       }
     }
+  }
+
+  openMobileNav(): void {
+    if(this.menu.style.visibility === "hidden") {
+      this.menu.style.visibility = "visible";
+      this.menu.style.opacity = 1;
+    } else {
+      this.menu.style.visibility = "hidden";
+      this.menu.style.opacity = 0;
+    }
+    
   }
 }

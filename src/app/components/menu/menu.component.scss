@@ -8,6 +8,9 @@ nav {
     height: 100%;
     position: fixed;
     font-size: 20px;
+    fa-icon#hamburger {
+        display: none;
+    }
     h1 { //Just to test
         font-weight: bold;
         font-size: 3em;
@@ -44,7 +47,7 @@ nav {
         }
         .socials {
             position: absolute;
-            bottom: 0;
+            bottom: 15px;
             li {
                 a {
                     color: white;
@@ -64,6 +67,56 @@ a {
     fa-icon {
         svg {
             width: 40px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    nav#desktop-nav {
+        top: 0;
+        width: 100% !important;
+        height: 65px;
+        z-index: 99;
+        fa-icon{
+            &#hamburger {
+                display: block;
+                color: $secondary-color;
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                font-size: 30px;
+            }
+        }
+        ul {
+            position: fixed;
+            width: 100%;
+            background-color: #213a42;
+            top: 65px;
+            margin: 0;
+            padding: 5px 0;
+            transition: visibility .3s, opacity .3s;
+            li {
+                display: inline-block;
+                padding: 0;
+                width: 25%;
+                span {
+                    position: unset !important;
+                    font-size: 12px;
+                    display: inline-block;
+                    width: 100%;
+                    padding-left: 0;
+                }
+            }
+            div.socials {
+                display: none;
+            }
+        }
+        li#collapse {
+            display: none;
+        }
+            
+        h1 {
+            width: fit-content;
         }
     }
 }

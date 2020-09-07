@@ -30,7 +30,6 @@ $portfolio-theme: mat-light-theme($portfolio-primary, $portfolio-accent, $portfo
 
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}
 
 body {
@@ -58,7 +57,11 @@ body {
     }
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
+    div#main-content {
+        margin-left: 0 !important;
+        margin-top: 75px !important;
+    }
     .content {
         max-width: 720px;
     }

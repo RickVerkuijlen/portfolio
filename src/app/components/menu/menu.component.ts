@@ -77,12 +77,12 @@ export class MenuComponent implements OnInit {
   }
 
   openMobileNav(): void {
-    if(this.menu.style.visibility === "hidden") {
-      this.menu.style.visibility = "visible";
-      this.menu.style.opacity = 1;
-    } else {
+    if(this.menu.style.visibility === "visible") {
       this.menu.style.visibility = "hidden";
       this.menu.style.opacity = 0;
+    } else {
+      this.menu.style.visibility = "visible";
+      this.menu.style.opacity = 1;
     }
     
   }
